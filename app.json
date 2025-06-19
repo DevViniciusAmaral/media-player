@@ -20,6 +20,9 @@
     },
     "ios": {
       "bundleIdentifier": "com.viniciusamaraldev.mediaplayer"
-    }
+    },
+    "plugins": [
+      "expo-font"
+    ]
   }
 }
