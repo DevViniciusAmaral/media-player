@@ -1,4 +1,4 @@
-import React from "react";
+import React, { JSX } from "react";
 import {
   ScrollViewProps,
   KeyboardAvoidingView,
@@ -12,8 +12,8 @@ import { UnistylesRuntime, useUnistyles } from "react-native-unistyles";
 import { StatusBar } from "expo-status-bar";
 
 interface LayoutProps extends ScrollViewProps {
-  header?: React.ReactNode;
-  footer?: React.ReactNode;
+  header?: React.ReactNode | JSX.Element;
+  footer?: React.ReactNode | JSX.Element;
 }
 
 export const Layout = ({
