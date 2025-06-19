@@ -1,4 +1,4 @@
-package com.mediaplayer
+package com.viniciusamaraldev.mediaplayer
 
 import android.app.Application
 import android.content.res.Configuration

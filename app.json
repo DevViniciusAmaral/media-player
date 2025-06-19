@@ -2,6 +2,24 @@
   "expo": {
     "name": "media-player",
     "slug": "media-player",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/app-icon.png",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/images/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#F7840A"
+    },
+    "android": {
+      "package": "com.viniciusamaraldev.mediaplayer",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#F7840A"
+      }
+    },
+    "ios": {
+      "bundleIdentifier": "com.viniciusamaraldev.mediaplayer"
+    }
   }
 }

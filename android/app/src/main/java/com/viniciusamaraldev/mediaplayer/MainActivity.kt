@@ -1,4 +1,4 @@
-package com.mediaplayer
+package com.viniciusamaraldev.mediaplayer
 
 import android.os.Build
 import android.os.Bundle
