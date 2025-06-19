@@ -1,3 +1,4 @@
+import "./src/application/theme";
 import { registerRootComponent } from "expo";
 import { App } from "@/application";
 
