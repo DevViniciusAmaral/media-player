@@ -10,11 +10,5 @@ module.exports = {
         },
       },
     ],
-    [
-      "react-native-unistyles/plugin",
-      {
-        root: "src",
-      },
-    ],
   ],
 };

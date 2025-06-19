@@ -6,10 +6,10 @@ import {
   ScrollView,
   View,
 } from "react-native";
-import { SafeAreaProvider } from "react-native-safe-area-context";
-import { styles } from "./styles";
-import { UnistylesRuntime, useUnistyles } from "react-native-unistyles";
+import { UnistylesRuntime, useStyles } from "react-native-unistyles";
 import { StatusBar } from "expo-status-bar";
+import { stylesheet } from "./styles";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 interface LayoutProps extends ScrollViewProps {
   header?: React.ReactNode | JSX.Element;
@@ -23,23 +23,23 @@ export const Layout = ({
   scrollEnabled,
   ...rest
 }: LayoutProps) => {
-  const { theme } = useUnistyles();
+  const { styles, theme } = useStyles(stylesheet);
   const { themeName } = UnistylesRuntime;
 
   const behavior = Platform.OS === "ios" ? "padding" : "height";
   const statusBarStyle = themeName === "dark" ? "light" : "dark";
 
   return (
-    <SafeAreaProvider>
-      <StatusBar
-        style={statusBarStyle}
-        backgroundColor={theme.colors.background}
-      />
+    <SafeAreaView style={styles.content}>
       <KeyboardAvoidingView
         enabled
         behavior={behavior}
         style={styles.container}
       >
+        <StatusBar
+          style={statusBarStyle}
+          backgroundColor={theme.colors.background}
+        />
         {header && <>{header}</>}
         {scrollEnabled ? (
           <ScrollView {...rest} />
@@ -48,6 +48,6 @@ export const Layout = ({
         )}
         {footer && <>{footer}</>}
       </KeyboardAvoidingView>
-    </SafeAreaProvider>
+    </SafeAreaView>
   );
 };

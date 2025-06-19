@@ -1,7 +1,7 @@
-import { PixelRatio } from "react-native";
-import { StyleSheet } from "react-native-unistyles";
+import { PixelRatio } from 'react-native';
+import { createStyleSheet } from 'react-native-unistyles';
 
-export const styles = StyleSheet.create((theme) => ({
+export const stylesheet = createStyleSheet((theme) => ({
   input: (size: number, fontFamily: string) => ({
     fontFamily,
     fontSize: PixelRatio.getFontScale() * size,

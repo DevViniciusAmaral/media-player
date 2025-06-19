@@ -1,15 +1,23 @@
 import React from "react";
-import { TextInput as RNTextInput, TextInputProps as RNTextInputProps } from "react-native";
-import { useUnistyles } from "react-native-unistyles";
-import { styles } from "./styles";
+import {
+  TextInput as RNTextInput,
+  TextInputProps as RNTextInputProps,
+} from "react-native";
+import { useStyles } from "react-native-unistyles";
+import { stylesheet } from "./styles";
 
 export interface TextInputProps extends RNTextInputProps {
   size?: number;
   weight?: "light" | "regular" | "medium" | "bold" | "black";
 }
 
-export const TextInput = ({ size, weight, style, ...rest }: TextInputProps) => {
-  const { theme } = useUnistyles();
+export const TextInput = ({
+  size = 16,
+  weight = "regular",
+  style,
+  ...rest
+}: TextInputProps) => {
+  const { styles, theme } = useStyles(stylesheet);
 
   const fontFamily = {
     light: theme.fonts.light,
@@ -19,5 +27,7 @@ export const TextInput = ({ size, weight, style, ...rest }: TextInputProps) => {
     black: theme.fonts.black,
   }[weight];
 
-  return <RNTextInput {...rest} style={[styles.input(size, fontFamily), style]} />;
+  return (
+    <RNTextInput {...rest} style={[styles.input(size, fontFamily), style]} />
+  );
 };
